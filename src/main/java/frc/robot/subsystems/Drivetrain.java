@@ -2,6 +2,9 @@ package frc.robot.subsystems;
 
 import java.io.File;
 
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import swervelib.SwerveDrive;
@@ -22,4 +25,14 @@ public class Drivetrain extends SubsystemBase {
         }
     }
     
+}
+
+@Override
+public void periodic(){
+
+    //Testing
+    SmartDashboard.putNumber("front right offset: ", swerveDrive.getModuleMap().get("frontright").getRelativePosition());
+    SmartDashboard.putNumber("back right offset: ", swerveDrive.getModuleMap().get("backright").getRelativePosition());
+    SmartDashboard.putNumber("front left offset: ", swerveDrive.getModuleMap().get("frontleft").getRelativePosition());
+    SmartDashboard.putNumber("back left offset: ", swerveDrive.getModuleMap().get("backleft").getRelativePosition());
 }
